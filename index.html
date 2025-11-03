@@ -77,24 +77,23 @@
     }
 
     .note {
-      margin-top: 10px;
-      font-size: 0.8rem;
-      color: #777;
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: #d58b1c;
+      font-weight: 500;
     }
 
     .gift-note {
-      margin-top: 12px;
-      font-size: 0.78rem;
-      color: #888;
-      font-style: italic;
-      line-height: 1.4;
-    }
-
-    .music-note {
-      margin-top: 8px;
-      font-size: 0.78rem;
-      text-align: center;
-      color: #999;
+      margin-top: 16px;
+      font-size: 0.92rem;
+      color: #5a4a18;
+      font-weight: 600;
+      background: linear-gradient(90deg, #fff8e1, #fffdf3);
+      border: 1.5px solid #d4af37;
+      border-radius: 10px;
+      padding: 10px 12px;
+      line-height: 1.5;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
     }
 
     @media (min-width: 480px) {
@@ -119,24 +118,29 @@
          target="_blank">✅ Confirmar asistencia</a>
     </div>
 
-    <p class="music-note">🎵 Música de fondo: disfruta este momento especial 💛</p>
+    <!-- FRASE BONITA -->
+    <p class="note">🧡 Toca la pantalla para acompañar este momento con música.</p>
 
     <!-- MENSAJE SOBRE EL REGALO -->
     <p class="gift-note">
-      Tu presencia será nuestro mejor regalo. <br>
+      Tu presencia será nuestro mejor regalo.<br>
       Si deseas acompañarnos con un detalle, habrá un espacio destinado para ello.
     </p>
   </main>
 
-  <!-- MÚSICA AUTOMÁTICA CON SUAVIZADO -->
-  <audio id="bg-music" src="OPALITE.mp3" autoplay loop muted></audio>
+  <!-- MÚSICA DE FONDO (activada al tocar) -->
+  <audio id="bg-music" src="OPALITE.mp3" loop></audio>
 
   <script>
     const audio = document.getElementById("bg-music");
-    // Sonido comienza en silencio y se activa suavemente
-    setTimeout(() => {
-      audio.muted = false;
-      audio.volume = 0.4; // volumen inicial suave
-    }, 1200);
+
+    // Permitir reproducción al tocar la pantalla
+    document.addEventListener("click", function () {
+      if (audio.paused) {
+        audio.play().catch(() => {});
+      }
+    }, { once: true });
   </script>
-</body
+</body>
+</html>
+
