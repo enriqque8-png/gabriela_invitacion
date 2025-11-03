@@ -82,6 +82,14 @@
       color: #777;
     }
 
+    .gift-note {
+      margin-top: 12px;
+      font-size: 0.78rem;
+      color: #888;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
     .music-note {
       margin-top: 8px;
       font-size: 0.78rem;
@@ -111,34 +119,24 @@
          target="_blank">✅ Confirmar asistencia</a>
     </div>
 
-    <p class="note">Puedes editar el mensaje antes de enviarlo o añadir acompañantes 🎓💛</p>
-    <p class="music-note" id="musicText">🎶 Cargando música...</p>
+    <p class="music-note">🎵 Música de fondo: disfruta este momento especial 💛</p>
+
+    <!-- MENSAJE SOBRE EL REGALO -->
+    <p class="gift-note">
+      Tu presencia será nuestro mejor regalo. <br>
+      Si deseas acompañarnos con un detalle, habrá un espacio destinado para ello.
+    </p>
   </main>
 
-  <!-- MÚSICA DE FONDO -->
-  <audio id="bg-music" src="OPALITE.mp3" autoplay loop></audio>
+  <!-- MÚSICA AUTOMÁTICA CON SUAVIZADO -->
+  <audio id="bg-music" src="OPALITE.mp3" autoplay loop muted></audio>
 
   <script>
     const audio = document.getElementById("bg-music");
-    const msg = document.getElementById("musicText");
-
-    // Intentar reproducir automáticamente
-    audio.play()
-      .then(() => {
-        msg.textContent = "🎵 Música activa — disfruta la invitación 💛";
-      })
-      .catch(() => {
-        msg.textContent = "🔊 Toca una vez en la pantalla para activar la música 🎶";
-      });
-
-    // En caso de bloqueo, permitir un toque manual
-    document.addEventListener("click", function () {
-      if (audio.paused) {
-        audio.play().then(() => {
-          msg.textContent = "🎵 Música activa — disfruta la invitación 💛";
-        });
-      }
-    }, { once: true });
+    // Sonido comienza en silencio y se activa suavemente
+    setTimeout(() => {
+      audio.muted = false;
+      audio.volume = 0.4; // volumen inicial suave
+    }, 1200);
   </script>
-</body>
-</html>
+</body
