@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Invitación al Grado de Gabriela</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -47,10 +48,13 @@
       font-size: 0.96rem;
       font-weight: 500;
       transition: all 0.25s ease;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
 
-    /* 📍 BOTÓN DE MAPA - DORADO CLARO CON BORDE */
+    /* 📍 BOTÓN DE MAPA */
     .btn-secondary {
       background: #fff8e1;
       border: 2px solid #d4af37;
@@ -62,7 +66,7 @@
       box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
     }
 
-    /* ✅ BOTÓN DE CONFIRMACIÓN - DORADO BRILLANTE */
+    /* 💬 BOTÓN DE WHATSAPP */
     .btn-primary {
       background: linear-gradient(135deg, #d4af37, #f9e79f);
       color: #2b2410;
@@ -76,6 +80,11 @@
       background: linear-gradient(135deg, #e0c155, #ffefb2);
     }
 
+    .btn-primary img {
+      width: 22px;
+      height: 22px;
+    }
+
     .note {
       margin-top: 14px;
       font-size: 0.85rem;
@@ -83,17 +92,19 @@
       font-weight: 500;
     }
 
+    /* 🎁 MENSAJE DEL REGALO (cursiva elegante) */
     .gift-note {
-      margin-top: 16px;
-      font-size: 0.92rem;
+      margin-top: 18px;
+      font-size: 1.05rem;
+      font-family: 'Great Vibes', cursive;
       color: #5a4a18;
-      font-weight: 600;
       background: linear-gradient(90deg, #fff8e1, #fffdf3);
-      border: 1.5px solid #d4af37;
-      border-radius: 10px;
-      padding: 10px 12px;
-      line-height: 1.5;
-      box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
+      border: 1.8px solid #d4af37;
+      border-radius: 12px;
+      padding: 12px 14px;
+      line-height: 1.6;
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+      font-weight: 400;
     }
 
     @media (min-width: 480px) {
@@ -115,7 +126,9 @@
 
       <a class="btn btn-primary"
          href="https://wa.me/593987265437?text=Hola%2C%20soy%20%5BNombre%20del%20invitado%5D%2C%20confirmo%20mi%20asistencia%20al%20grado%20de%20Gabriela%20Stefan%C3%ADa%20Caragulla%20Brice%C3%B1o%20el%208%20de%20noviembre%20a%20las%206pm.%20%E2%9C%A8"
-         target="_blank">✅ Confirmar asistencia</a>
+         target="_blank">
+         <img src="whatsapp.png" alt="WhatsApp"> Confirmar asistencia
+      </a>
     </div>
 
     <!-- FRASE BONITA -->
@@ -128,13 +141,11 @@
     </p>
   </main>
 
-  <!-- MÚSICA DE FONDO (activada al tocar) -->
+  <!-- 🎵 MÚSICA ACTIVADA AL TOCAR -->
   <audio id="bg-music" src="OPALITE.mp3" loop></audio>
 
   <script>
     const audio = document.getElementById("bg-music");
-
-    // Permitir reproducción al tocar la pantalla
     document.addEventListener("click", function () {
       if (audio.paused) {
         audio.play().catch(() => {});
