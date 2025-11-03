@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación al Grado de Gabriela</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 16px;
+    }
+
+    .card {
+      background: #ffffff;
+      max-width: 480px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      padding: 24px 22px 26px;
+      text-align: center;
+      border: 1px solid rgba(212, 175, 55, 0.25); /* dorado suave */
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #b08a2e;
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+      color: #222;
+    }
+
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 18px;
+      color: #444;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      margin: 0 auto 16px;
+      background: linear-gradient(90deg, #d4af37, #f5e3a1);
+      border-radius: 999px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .details {
+      background: #faf7ef;
+      border-radius: 14px;
+      padding: 14px 14px 12px;
+      margin: 10px 0 18px;
+      font-size: 0.9rem;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    .details-row {
+      margin-bottom: 6px;
+    }
+
+    .details-label {
+      font-weight: 600;
+      color: #7a5b14;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    a.btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, color 0.12s ease;
+      cursor: pointer;
+    }
+
+    a.btn-primary {
+      background: linear-gradient(135deg, #d4af37, #f5e3a1);
+      color: #2b2410;
+      box-shadow: 0 8px 18px rgba(212, 175, 55, 0.35);
+    }
+
+    a.btn-primary:active {
+      transform: translateY(1px);
+      box-shadow: 0 4px 10px rgba(212, 175, 55, 0.35);
+    }
+
+    a.btn-secondary {
+      background: #ffffff;
+      color: #7a5b14;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+    }
+
+    a.btn-secondary:active {
+      transform: translateY(1px);
+      background: #faf7ef;
+    }
+
+    .footer-note {
+      margin-top: 14px;
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    @media (min-width: 480px) {
+      .buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+      .buttons a.btn {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="tag">Invitación especial</div>
+    <h1>Grado de Gabriela</h1>
+    <h2>Gabriela Stefanía Caragulla Briceño</h2>
+    <div class="divider"></div>
+
+    <p>
+      Con gran alegría te invito a compartir este logro tan importante.
+      Tu presencia hará de este día un momento inolvidable.
+    </p>
+
+    <section class="details">
+      <div class="details-row">
+        <span class="details-label">Fecha:</span>
+        <span>sábado, 8 de noviembre de 2025</span>
+      </div>
+      <div class="details-row">
+        <span class="details-label">Hora:</span>
+        <span>6:00 p.m.</span>
+      </div>
+      <div class="details-row">
+        <span class="details-label">Lugar:</span>
+        <span>Barrio Santo Domingo, calles Los Laureles y Celiao Aguinaga</span>
+      </div>
+    </section>
+
+    <div class="buttons">
+      <a
+        class="btn btn-secondary"
+        href="https://www.google.com/maps?q=0.3249054438740879,-78.22419430058159"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        📍 Ver ubicación en mapa
+      </a>
+
+      <a
+        class="btn btn-primary"
+        href="https://wa.me/593987265437?text=Hola%2C%20soy%20%5BNombre%20del%20invitado%5D%2C%20confirmo%20mi%20asistencia%20al%20grado%20de%20Gabriela%20Stefan%C3%ADa%20Caragulla%20Brice%C3%B1o%20el%208%20de%20noviembre%20a%20las%206pm.%20%E2%9C%A8"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ✅ Confirmar asistencia
+      </a>
+    </div>
+
+    <p class="footer-note">
+      Puedes editar el mensaje antes de enviarlo para añadir acompañantes u otros detalles.
+    </p>
+  </main>
+</body>
+</html>
