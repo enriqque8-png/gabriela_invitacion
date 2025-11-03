@@ -42,34 +42,38 @@
 
     a.btn {
       text-decoration: none;
-      padding: 11px 16px;
+      padding: 12px 18px;
       border-radius: 999px;
-      font-size: 0.95rem;
+      font-size: 0.96rem;
       font-weight: 500;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
       display: inline-block;
     }
 
+    /* 📍 BOTÓN DE MAPA - DORADO CLARO CON BORDE */
     .btn-secondary {
-      background: #ffffff;
-      border: 1px solid #d4af37;
+      background: #fff8e1;
+      border: 2px solid #d4af37;
       color: #7a5b14;
     }
 
     .btn-secondary:hover {
-      background: #faf7ef;
+      background: #fff2cc;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
     }
 
+    /* ✅ BOTÓN DE CONFIRMACIÓN - DORADO BRILLANTE */
     .btn-primary {
-      background: linear-gradient(135deg, #d4af37, #f5e3a1);
+      background: linear-gradient(135deg, #d4af37, #f9e79f);
       color: #2b2410;
-      box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
+      box-shadow: 0 6px 16px rgba(212, 175, 55, 0.45);
       border: none;
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(212, 175, 55, 0.5);
+      box-shadow: 0 10px 22px rgba(212, 175, 55, 0.6);
+      background: linear-gradient(135deg, #e0c155, #ffefb2);
     }
 
     .note {
@@ -108,21 +112,33 @@
     </div>
 
     <p class="note">Puedes editar el mensaje antes de enviarlo o añadir acompañantes 🎓💛</p>
-    <p class="music-note">🔊 Si no escuchas la música, toca una vez en la pantalla para activarla.</p>
+    <p class="music-note" id="musicText">🎶 Cargando música...</p>
   </main>
 
   <!-- MÚSICA DE FONDO -->
   <audio id="bg-music" src="OPALITE.mp3" autoplay loop></audio>
 
   <script>
-    // Algunos móviles bloquean el autoplay, así que esto lo activa con un toque
+    const audio = document.getElementById("bg-music");
+    const msg = document.getElementById("musicText");
+
+    // Intentar reproducir automáticamente
+    audio.play()
+      .then(() => {
+        msg.textContent = "🎵 Música activa — disfruta la invitación 💛";
+      })
+      .catch(() => {
+        msg.textContent = "🔊 Toca una vez en la pantalla para activar la música 🎶";
+      });
+
+    // En caso de bloqueo, permitir un toque manual
     document.addEventListener("click", function () {
-      const audio = document.getElementById("bg-music");
-      if (audio && audio.paused) {
-        audio.play().catch(() => {});
+      if (audio.paused) {
+        audio.play().then(() => {
+          msg.textContent = "🎵 Música activa — disfruta la invitación 💛";
+        });
       }
     }, { once: true });
   </script>
 </body>
 </html>
-
